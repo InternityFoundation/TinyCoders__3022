@@ -2,11 +2,12 @@ const   express         = require('express'),
         mongoose        = require('mongoose'),
         session         = require('express-session'),
         router          = express.Router(),
+        routerQuiz      = express.Router();
         path            = require('path'),
         controller      = require('../controllers/controller'),
         Admin           = require('../models/admin'),
         User            = require('../models/users');
-
+        
 
 //session used to store logged in users
 router.use(session({
@@ -79,6 +80,16 @@ router.get("/admin",(req,res)=>{
     res.render('admin');
 })
 
+//*********************************quiz**********************************************************/
+//app.use('/quiz',quizRoutes);
+
+router.get('/quiz', questionController.getQuestions);
+
+// Quiz API Routes (/quiz/add)
+router.post('/quiz/add', questionController.addQuestions);
+
+// Quiz API Routes (/quiz/next)
+router.post('/quiz/next', questionController.nextQuestion);
 
 
 module.exports = router;

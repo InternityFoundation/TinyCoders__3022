@@ -20,6 +20,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : false}));
 app.set('view engine', 'ejs');
 app.use(routes);
+
+
 app.listen(1234,()=>{
     console.log("Server running on port 1234");
 });
