@@ -55,6 +55,7 @@ function admin_login_authentication(req,res){
 function user_registeration(req,res){
     const languages = req.body.languages.split(','),
           skills = req.body.Skills.split(',')  ;
+          console.log(req.body);
     const new_user = new User({
         name : {
             fname : req.body.firstName,
@@ -62,20 +63,22 @@ function user_registeration(req,res){
             lname : req.body.lastName
         },
         email : req.body.email,
-        // contact : req.body.contact,
-        // gender : req.body.gender,
-        // languages : languages,
-        // skills : skills,
-        // education : req.body.education,
-        // work : req.body.work,
-        // salary : req.body.salary
+         contact : parseInt(req.body.contact),
+         gender : req.body.gender,
+         location : req.body.location,
+         languages : languages,
+         skills : skills,
+         education : req.body.education,
+         work : req.body.work,
+         experience : req.body.experience,
+         salary : parseInt(req.body.salary)
     });
     console.log(new_user)
     new_user.save((err)=>{
         if(err)
-            res.end(err);
-        res.redirect('/login');
+            throw err;
     });
+    res.render('HTML_');
 }
 
 

@@ -9,39 +9,42 @@ const userSchema = new mongoose.Schema({
     },
     email:{
         type: String,
-        required:true
+       // required:true
     },
-    // contact : {
-    //     type : Number,
-    //     required : true //??
-    // },
-    // gender:{
-    //     type: String,
-    //     required: true
-    // },
-    // languages:{
-    //     type : [String],
-    //     required : true
-    // },
-    // skills : {
-    //     type : [String],
-    // },
-    // education:{
-    //     type: String,
-    //     required: true
-    // },
-    // work : {
-    //     type: Number,
-    //     required: true
-    // },
-    // experience : {
-    //     type : Number,
-    //     required: true
-    // },
-    // salary : {
-    //     type: Number,
-    //     required : true
-    // }
+    contact : {
+        type : Number,
+        //required : true //??
+    },
+    gender:{
+        type: String,
+      //  required: true
+    },
+    location:{
+        type: String
+    },
+    languages:{
+        type : [String],
+       // required : true
+    },
+    skills : {
+        type : [String],
+    },
+    education:{
+        type: String,
+      //  required: true
+    },
+    work : {
+        type: String,
+       // required: true
+    },
+    experience : {
+        type : Number,
+        //required: true
+    },
+    salary : {
+        type: Number,
+        //required : true
+    }
 
 });
 

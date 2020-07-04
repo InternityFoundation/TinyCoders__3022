@@ -79,6 +79,11 @@ router.get("/admin",(req,res)=>{
     res.render('admin');
 })
 
+router.post('/testResult',(req,res)=>{
+    console.log(req.body);
+    res.send('You test has been submitted successfully !');
+});
+
 
 
 module.exports = router;
