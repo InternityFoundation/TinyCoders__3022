@@ -16,7 +16,7 @@ mongoose.connect("mongodb://localhost:27017/Job-portal",{ useUnifiedTopology: tr
 //var seedData    = require("./seed");
 
 //seedData();
-app.use(express.static("uploads"));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended : false}));
 app.set('view engine', 'ejs');
 app.use(routes);
